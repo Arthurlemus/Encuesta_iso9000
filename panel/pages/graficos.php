@@ -124,7 +124,7 @@ $datosP16 = "";$datosP17 = "";$datosP18 = "";
 $datosP19 = "";$datosP20 = "";
 // ===============================
 
-
+// echo "SELECT opcion,count(opcion)as cantidad FROM respuestas where cod_pregunta='P1' ".$donde." group by opcion";
 // ===============================
 // Armado de Graficos
 // ===============================

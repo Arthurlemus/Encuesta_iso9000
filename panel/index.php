@@ -190,7 +190,7 @@ $archivoActual = basename($_SERVER['PHP_SELF']);
         </li>
 
 
-        <li class="treeview">
+        <li class="treeview" style="display:none">
           <a href="#">
             <i class="fa fa-table"></i> <span>Reporte</span>
             <i class="fa fa-angle-left pull-right"></i>
