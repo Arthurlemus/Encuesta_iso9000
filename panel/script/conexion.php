@@ -1,9 +1,9 @@
 <?php
 
-$server = "Servior";
-$user = "Usuario" ;
-$bd = "Base de datos";
-$pass = "PassBD";
+$server = "acerosocotlan.mx";
+$user = "acerosoc_root" ;
+$bd = "acerosocotlan_iso9000";
+$pass = "Acer232Ros";
 
 
 // $ip = $_SERVER['REMOTE_ADDR'];

@@ -17,7 +17,7 @@
   </div>
   
   <div class="col-md-3" style="">
-            <label for="suc">Sucursal</label>
+            <label for="suc">Empresa</label>
             <select name="suc" id="suc" class="form-control">
               <option value="TODAS">Todas</option>
               
@@ -27,7 +27,7 @@
                // =========================================
                // Sucursales con Respuesta
                // =========================================
-                $sqlsuc = mysql_query("SELECT sucursal FROM respuestas group by sucursal order by sucursal",$conex)or die(mysql_error());
+                $sqlsuc = mysql_query("SELECT empresa FROM respuestas group by empresa order by empresa",$conex)or die(mysql_error());
                 while ($s = mysql_fetch_assoc($sqlsuc))
                 {
                   echo "<option value='".strtoupper($s['sucursal'])."'>".ucwords(strtolower($s['sucursal']))."</option>";

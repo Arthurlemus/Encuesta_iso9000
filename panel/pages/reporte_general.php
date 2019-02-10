@@ -9,13 +9,16 @@ $donde2 = "";
 
 if($suc != "TODAS")
 {
-  $donde = " and sucursal='".$suc."' ";
-   $donde2 = "WHERE sucursal='".$suc."'";
+  $donde = " and empresa='".$suc."' and cod_pregunta='P11' ";
+   $donde2 = "WHERE empresa='".$suc."'";
+}else{
+  $donde = " and cod_pregunta='P11'";
 }
 
 
-$sql = mysql_query("SELECT cod_pregunta as numpregunta,(SELECT pregunta FROM preguntas WHERE cod_pregunta=er.cod_pregunta)as pregunta,opcion,sucursal,fecharespuesta,horarespuesta,why,example
- FROM respuestas er WHERE fecharespuesta between '".$inicio."' and '".$fin."' ".$donde." order by sucursal,cve_respuesta,fecharespuesta",$conex)or die(mysql_error());
+$sql = mysql_query("SELECT cod_pregunta as numpregunta,(SELECT pregunta FROM preguntas WHERE cod_pregunta=er.cod_pregunta)as pregunta,opcion,sucursal,fecharespuesta,horarespuesta,why,example,empresa,quienrealiza,correo
+ FROM respuestas er WHERE fecharespuesta between '".$inicio."' and '".$fin."' ".$donde." order by empresa,cve_respuesta,fecharespuesta",$conex)or die(mysql_error());
+
 
 // echo "SELECT cod_pregunta as numpregunta,(SELECT pregunta FROM preguntas WHERE cod_pregunta=er.cod_pregunta)as pregunta,opcion,sucursal,factura,origen,fecharespuesta,horarespuesta
 //  FROM respuestas er WHERE fecharespuesta between '".$inicio."' and '".$fin."' ".$donde." order by sucursal,numpregunta,fecharespuesta";
@@ -30,7 +33,7 @@ $num = mysql_num_rows($sql);
 $sqlt = mysql_query("SELECT sum(total) as total FROM (SELECT sucursal,count(cod_pregunta) as total FROM respuestas ".$donde2."  group by sucursal order by sucursal,cod_pregunta) as tabla",$conex)or die(mysql_error());
 
 $tEnc = mysql_fetch_assoc($sqlt);
-$totEnc = round(($tEnc['total']/26));
+$totEnc = round(($tEnc['total']/11));
 // =================================
 
 
@@ -56,9 +59,9 @@ $totEnc = round(($tEnc['total']/26));
     <th align='center'>Num.Pregunta</th>
     <th align='center'>Pregunta</th>
     <th align='center'>Respuesta</th>
-    <th align='center'>Sucursal</th>
-    <th align='center'>¿Porque?</th>
-    <th align='center'>Ejemplo</th>
+    <th align='center'>Empresa</th>
+    <th align='center'>Realizo</th>
+    <th align='center'>Correo</th>
     </tr>
     </thead>
     <tbody>";
@@ -72,9 +75,9 @@ $totEnc = round(($tEnc['total']/26));
       <td align='center'>Pregunta #".str_replace('P','',$d['numpregunta'])."</td>
       <td align='center'>".utf8_encode($d['pregunta'])."</td>
       <td align='center'>".utf8_encode($d['opcion'])."</td>
-      <td align='center'>".utf8_encode($d['sucursal'])."</td>
-      <td align='center'>".utf8_encode($d['why'])."</td>
-      <td align='center'>".utf8_encode($d['example'])."</td>";
+      <td align='center'>".utf8_encode($d['empresa'])."</td>
+      <td align='center'>".utf8_encode($d['quienrealiza'])."</td>
+      <td align='center'>".utf8_encode($d['correo'])."</td>";
       
       // if($d['evidencia']!="-.-")
       // {

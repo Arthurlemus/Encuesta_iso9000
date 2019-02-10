@@ -190,14 +190,14 @@ $archivoActual = basename($_SERVER['PHP_SELF']);
         </li>
 
 
-        <li class="treeview" style="display:none">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-table"></i> <span>Reporte</span>
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="#" onclick="page_reporte();"><i class="fa fa-folder-open"></i>General</a></li>
-            <li><a href="#" onclick="lista_claves();"><i class="fa fa-folder-open"></i>Lista de Claves</a></li>
+            <li style="display:none"><a href="#" onclick="lista_claves();"><i class="fa fa-folder-open"></i>Lista de Claves</a></li>
           </ul>
         </li>
 
