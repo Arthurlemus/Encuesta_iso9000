@@ -20,8 +20,8 @@ $sql = mysql_query("SELECT cod_pregunta as numpregunta,(SELECT pregunta FROM pre
  FROM respuestas er WHERE fecharespuesta between '".$inicio."' and '".$fin."' ".$donde." order by empresa,cve_respuesta,fecharespuesta",$conex)or die(mysql_error());
 
 
-// echo "SELECT cod_pregunta as numpregunta,(SELECT pregunta FROM preguntas WHERE cod_pregunta=er.cod_pregunta)as pregunta,opcion,sucursal,factura,origen,fecharespuesta,horarespuesta
-//  FROM respuestas er WHERE fecharespuesta between '".$inicio."' and '".$fin."' ".$donde." order by sucursal,numpregunta,fecharespuesta";
+// echo "SELECT cod_pregunta as numpregunta,(SELECT pregunta FROM preguntas WHERE cod_pregunta=er.cod_pregunta)as pregunta,opcion,sucursal,fecharespuesta,horarespuesta,why,example,empresa,quienrealiza,correo
+// FROM respuestas er WHERE fecharespuesta between '".$inicio."' and '".$fin."' ".$donde." order by empresa,cve_respuesta,fecharespuesta";
 
 
 $num = mysql_num_rows($sql);
@@ -49,9 +49,9 @@ $totEnc = round(($tEnc['total']/11));
    <?php
    if($num>0)
    {
-    echo "<button class='btn btn-success' onclick='descargarExcel();'>Exportar a Excel</button>
-
-    <table class='table table-hover table-bordered'  id='tabla_general'>
+    echo "<button class='btn btn-success' onclick='exportarExcel();'>Exportar a Excel</button>
+    <div class='col s12 table-responsive' style='overflow: auto' id='tablaDetalle'>
+    <table class='table table-hover table-bordered' id='tabla_general'>
     <thead>
     <tr style='background:#348EB8;color:white;'>
     <th align='center'>No.</th>
@@ -95,7 +95,7 @@ $totEnc = round(($tEnc['total']/11));
       $folio+=1;
     }
     echo "</tbody>
-    </table>";
+    </table></div>";
 
   }else{
     echo "<tr><td colspan='8'>Sin Registros de <b>".$inicio."</b> hasta <b>".$fin."</b></td></tr>";

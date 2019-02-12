@@ -30,7 +30,7 @@
                 $sqlsuc = mysql_query("SELECT empresa FROM respuestas group by empresa order by empresa",$conex)or die(mysql_error());
                 while ($s = mysql_fetch_assoc($sqlsuc))
                 {
-                  echo "<option value='".strtoupper($s['sucursal'])."'>".ucwords(strtolower($s['sucursal']))."</option>";
+                  echo "<option value='".strtoupper($s['empresa'])."'>".ucwords(strtolower($s['empresa']))."</option>";
                 }
                // =========================================
 

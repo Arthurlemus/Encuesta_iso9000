@@ -126,6 +126,12 @@ function descargarExcel() {
 }
 
 
+function exportarExcel() { // Exporta la tabla a Excel
+    window.open('data:application/vnd.ms-excel,' + escape($("#tablaDetalle").html()));
+}
+
+
+
 function btn_detalle(grafico) {
     var inicio = $("#inicio").val();
     var fin = $("#fin").val();
