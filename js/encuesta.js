@@ -165,6 +165,12 @@ function pregunta_siguiente() {
         why = $("#why").val().trim();
         example = $("#example").val().trim();
     }
+     
+    if(siguientepregunta==10){ // Para hacer opcional solo la pregunta 11
+        if(respuesta==""){
+            respuesta="-";
+        }
+    }
 
     if (respuesta != "" && respuesta != undefined && why != "" && example != "") {
 
