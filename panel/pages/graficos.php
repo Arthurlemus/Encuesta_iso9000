@@ -97,8 +97,8 @@ if($suc != "TODAS")
 // =================================
 // Sacar el total de Encuestas
 // =================================
-$sqlt = mysql_query("SELECT sum(total) as total FROM (SELECT sucursal,count(cod_pregunta) as total FROM respuestas WHERE fecharespuesta between '{$inicio}' and '{$fin}'  ".$donde2."  group by empresa order by empresa,cod_pregunta) as tabla",$conex)or die(mysql_error());
 
+$sqlt = mysql_query("SELECT sum(total) as total FROM (SELECT any_value(sucursal) as sucursal,count(cod_pregunta) as total,empresa FROM respuestas WHERE fecharespuesta between '{$inicio}' and '{$fin}'  ".$donde2."  group by empresa order by empresa,total) as tabla",$conex)or die(mysql_error());
 $tEnc = mysql_fetch_assoc($sqlt);
 $totEnc = round(($tEnc['total']/11));
 

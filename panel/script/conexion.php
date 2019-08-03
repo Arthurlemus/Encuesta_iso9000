@@ -2,8 +2,9 @@
 
 $server = "acerosocotlan.mx";
 $user = "acerosoc_root" ;
-$bd = "acerosocotlan_iso9000";
-$pass = "Acer232Ros";
+$bd = "acerosoc_acerosocotlan_iso9000";
+$pass = "Acer0cotlan232";
+
 
 
 // $ip = $_SERVER['REMOTE_ADDR'];

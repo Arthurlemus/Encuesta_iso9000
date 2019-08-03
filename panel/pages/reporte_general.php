@@ -30,7 +30,7 @@ $num = mysql_num_rows($sql);
 // =================================
 // Sacar el total de Encuestas
 // =================================
-$sqlt = mysql_query("SELECT sum(total) as total FROM (SELECT sucursal,count(cod_pregunta) as total FROM respuestas ".$donde2."  group by sucursal order by sucursal,cod_pregunta) as tabla",$conex)or die(mysql_error());
+$sqlt = mysql_query("SELECT sum(total) as total FROM (SELECT sucursal,count(cod_pregunta) as total FROM respuestas ".$donde2."  group by sucursal order by sucursal,total) as tabla",$conex)or die(mysql_error());
 
 $tEnc = mysql_fetch_assoc($sqlt);
 $totEnc = round(($tEnc['total']/11));

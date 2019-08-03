@@ -178,8 +178,8 @@ function verificarcookie(ubicacion) {
         }
     } else {
         if (ubicacion == "login.php") {
-            // location.href = "http://acerosocotlan.mx/gao/encuestaldn/panel/";
-           location.href = "http://localhost/acerosocotlan/encuesta_iso9000/panel/";
+            location.href = "http://acerosocotlan.mx/gao/encuestaldn/panel/";
+        //    location.href = "http://localhost/acerosocotlan/encuesta_iso9000/panel/";
         }
     }
 }
@@ -220,8 +220,8 @@ function iniciarsession() {
                     if (info[0] == "encontrado") {
 
                         crearcookie(info[1], info[2], info[4], info[3]); // Crea las cookies
-                        // location.href = "http://acerosocotlan.mx/gao/encuestaldn/panel/";
-                        location.href = "http://localhost/acerosocotlan/encuesta_iso9000/panel/";
+                        location.href = "http://acerosocotlan.mx/gao/encuestaldn/panel/";
+                        // location.href = "http://localhost/acerosocotlan/encuesta_iso9000/panel/";
 
                     } else {
                         alert(info[0]);

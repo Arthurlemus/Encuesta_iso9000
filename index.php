@@ -58,44 +58,18 @@ $_SESSION['pin'] = 0000;
 
 <div class="lockscreen-wrapper" id="main-content" > <!-- Cuadro Principal -->
 
-  <div class="lockscreen-logo">
-    <a href="#"><b>Bienvenid@</b></a>
-  </div>
-  <!-- User name -->
-  <div class="lockscreen-name">Grupo Aceros Ocotlan</div>
 
- 
-  <div class="lockscreen-item">
-    <!-- lockscreen image -->
-    <div class="lockscreen-image">
-      <img src="css/img/logo.png" alt="User Image">
-    </div>
-
-    <form class="lockscreen-credentials" id="formulario">
-      <div class="input-group">
-        <input type="password" class="form-control" placeholder="password" name="clave" id="clave" value="" />
-
-        <div class="input-group-btn">
-          <button type="button" class="btn" onclick="iniciar_session();"><i class="fa fa-arrow-right text-muted"></i></button>
-        </div>
-      </div>
-    </form>
     <!-- /.lockscreen credentials -->
 
   </div>
 
   <!-- /.lockscreen-item -->
-  <div class="help-block text-center">
-    Use su clave para acceder a la encuesta
-  </div>
+
   <div class="text-center">
     <br/>
     <!-- <a href="login.html">Or sign in as a different user</a> -->
   </div>
-  <div class="lockscreen-footer text-center">
-    Copyright &copy; 2018-2020 <b><a href="http://acerosocotlan.mx" class="text-black">Aceros Ocotlan</a></b><br>
-    All rights reserved
-  </div>
+
 
 
 </div>
